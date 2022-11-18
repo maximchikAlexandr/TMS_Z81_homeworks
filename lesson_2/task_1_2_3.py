@@ -1,7 +1,7 @@
 # task 1
 var1 = var2 = var3 = 2
 assert var1 == var2 == var3 and \
-        var1 is var2 is var3
+    var1 is var2 is var3
 
 # task 2
 var4, var5 = 3, 3.0
