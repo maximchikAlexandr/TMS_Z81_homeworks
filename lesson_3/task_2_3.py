@@ -1,10 +1,3 @@
-dict_case = {
-    (1, 11) : "Привет {name}",
-    (11, 19) : "Привет {name}",
-    (19, 100) : "Привет {name}",
-    (100, 1000) : "Привет {name}"
-}
-
 while True:
     name, age = input("Введите имя:\n"), input("Введите возраст:\n")
 
@@ -14,11 +7,11 @@ while True:
     else:
         age = int(age)
 
-    if age in range(1, 11):
-        print(f"Привет {name}")
-    elif age in range(11, 19):
-        print(f"Привет {name}")
+    if age in range(1, 10):
+        print(f"Привет, шкет {name}")
+    elif age in range(10, 19):
+        print(f"Как жизнь {name}")
     elif age in range(19, 100):
-        print(f"Привет {name}")
+        print(f"Что желаете {name}")
     else:
-        print(f"Привет {name}")
+        print(f"{name}, вы лжете - в наше время столько не живут...")
