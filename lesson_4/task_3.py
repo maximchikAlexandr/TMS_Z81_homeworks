@@ -2,8 +2,8 @@ from collections import Counter
 from random import randint
 
 
-def my_counter(lst: list) -> dict:
-    res = {}
+def my_counter(lst: list[int]) -> dict[int, int]:
+    res: dict[int, int] = {}
     for elem in lst:
         if res.get(elem):
             res[elem] += 1
