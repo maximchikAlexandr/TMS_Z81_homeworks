@@ -1,7 +1,7 @@
 from math import factorial
 
 
-def fact(num):
+def fact(num: int) -> int:
     if num == 1:
         return 1
     return num * fact(num - 1)

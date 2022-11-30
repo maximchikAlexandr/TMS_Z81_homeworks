@@ -3,8 +3,10 @@ from time import sleep
 
 
 def get_my_time() -> str:
-    sleep(1)
-    return datetime.strftime(datetime.now(), '%Y-%m-%d %H:%M:%S')
+    seconds = 1
+    time_format = '%Y-%m-%d %H:%M:%S'
+    sleep(seconds)
+    return datetime.strftime(datetime.now(), time_format)
 
 
 n = int(input('Введите целое число:\n'))

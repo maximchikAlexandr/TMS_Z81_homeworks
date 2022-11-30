@@ -14,5 +14,5 @@ def my_counter(lst: list) -> dict:
 
 my_list = [randint(1, 10) for _ in range(100)]
 result = my_counter(my_list)
-assert dict(Counter(my_list)) == result
+assert result == dict(Counter(my_list))
 print(f'{result=}')
