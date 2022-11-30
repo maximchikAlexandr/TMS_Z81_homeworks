@@ -2,9 +2,8 @@ from datetime import datetime
 from time import sleep
 
 
-def get_my_time() -> str:
-    seconds = 1
-    time_format = '%Y-%m-%d %H:%M:%S'
+def get_my_time(seconds: int = 1,
+                time_format: str = '%Y-%m-%d %H:%M:%S') -> str:
     sleep(seconds)
     return datetime.strftime(datetime.now(), time_format)
 
