@@ -29,9 +29,8 @@ def recursive_search(target: dict | list | str,
                      pattern: str,
                      deep: int = -1,
                      parent: str | None = None) -> None:
-    if isinstance(target, str):
-        if target == pattern:
-            print(f"Значение {pattern} найдено на глубине {deep}, {parent=}")
+    if isinstance(target, str) and target == pattern:
+        print(f"Значение {pattern} найдено на глубине {deep}, {parent=}")
     elif isinstance(target, list):
         for elem in target:
             recursive_search(elem, pattern, deep, parent)
@@ -41,7 +40,7 @@ def recursive_search(target: dict | list | str,
             recursive_search(value, pattern, deep, key)
 
 
-""" Пример словаря: """
+
 source_dict = {
     "key1": {
         "key2": {
