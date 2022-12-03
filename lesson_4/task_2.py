@@ -1,12 +1,12 @@
 from math import factorial
 
 
-def fact(num: int) -> int:
-    if num == 1:
+def fact(number: int) -> int:
+    if number == 1:
         return 1
-    return num * fact(num - 1)
+    return number * fact(number - 1)
 
 
-n = int(input('Введите целое число:\n'))
-assert fact(n) == factorial(n)
-print(f'{fact(n)=}')
+num = int(input("Введите целое число:\n"))
+assert fact(num) == factorial(num), f"Неверное значение {fact(num)=}, а должно быть {factorial(num)}"
+print(f"{fact(num)=}")

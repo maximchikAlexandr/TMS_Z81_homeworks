@@ -5,14 +5,11 @@ from random import randint
 def my_counter(lst: list[int]) -> dict[int, int]:
     res: dict[int, int] = {}
     for elem in lst:
-        if res.get(elem):
-            res[elem] += 1
-        else:
-            res[elem] = 1
+        res[elem] = res.get(elem, 0) + 1
     return res
 
 
 numbers = [randint(1, 10) for _ in range(100)]
 result = my_counter(numbers)
-assert result == Counter(numbers)
+assert result == Counter(numbers), f'Неверное значение {result=}, а должно быть {Counter(numbers)}'
 print(f'{result=}')
