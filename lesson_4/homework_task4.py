@@ -13,19 +13,22 @@ def recursive_search(
     pattern: str,
     deep: int = -1,
     parent: str | None = None,
-) -> None:
+) -> dict | None:
     """Your code is here"""
-    found = []
     if target == pattern:
-        found.append({"val": pattern, "parent": parent, "deep": deep})
+        return {"val": pattern, "parent": parent, "deep": deep}
+    if isinstance(target, list):
+        for elem in target:
+            result = recursive_search(elem, pattern, deep, parent)
+            if result is not None:
+                return result
     elif isinstance(target, dict):
         deep += 1
         for key, value in target.items():
-            found.extend(recursive_search(value, pattern, deep, key))
-    elif isinstance(target, list):
-        for elem in target:
-            found.extend(recursive_search(elem, pattern, deep, parent))
-    return found
+            result = recursive_search(value, pattern, deep, key)
+            if result is not None:
+                return result
+    return None
 
 
 # Source dict
@@ -66,5 +69,5 @@ values = [
 ]
 
 for lookup_value, expected_result in values:
-    RESULT = recursive_search(source_dict, lookup_value)[0]
+    RESULT = recursive_search(source_dict, lookup_value)
     assert RESULT == expected_result, f"{RESULT} != {expected_result}"
