@@ -9,15 +9,15 @@
 
 
 def recursive_search(
-        target: dict | list | str,
-        pattern: str,
-        deep: int = -1,
-        parent: str | None = None,
+    target: dict | list | str,
+    pattern: str,
+    deep: int = -1,
+    parent: str | None = None,
 ) -> None:
     """Your code is here"""
     found = []
     if target == pattern:
-        found.append({'val': pattern, 'parent': parent, 'deep': deep})
+        found.append({"val": pattern, "parent": parent, "deep": deep})
     elif isinstance(target, dict):
         deep += 1
         for key, value in target.items():
