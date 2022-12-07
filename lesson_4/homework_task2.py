@@ -16,6 +16,7 @@ def recursive_max(some_list: list[int], max_value: int = 0) -> int:
 
 
 # Test
-source = [2, 1, 0, 5, 7, 6, 4, 3]
-print(source)
-assert recursive_max(source) == 7
+if __name__ == '__main__':
+    source = [2, 1, 0, 5, 7, 6, 4, 3]
+    print(source)
+    assert recursive_max(source) == 7
