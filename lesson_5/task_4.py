@@ -2,9 +2,6 @@ from random import randint
 from timeit import default_timer
 
 
-from lesson_4.homework_task2 import recursive_max
-
-
 def logging_func(func):
     def inner(*args, **kwargs):
         start_time = default_timer()
@@ -16,18 +13,27 @@ def logging_func(func):
     return inner
 
 
-numbers = [randint(1, 50) for _ in range(990)]
-
-
 @logging_func
 def max_bultin(*args) -> int:
     return max(*args)
 
 
+def recursive_max(some_list: list[int], max_value: int = 0) -> int:
+    """
+    Your code is here
+    """
+    if not some_list:
+        return max_value
+    temp_value = some_list.pop()
+    max_value = temp_value if temp_value > max_value else max_value
+    return recursive_max(some_list, max_value)
+
+
 @logging_func
-def recursive_max_import(*args) -> int:
+def my_recursive_max(*args) -> int:
     return recursive_max(*args)
 
 
+numbers = [randint(1, 50) for _ in range(990)]
 max_bultin(numbers)
-recursive_max_import(numbers)
+my_recursive_max(numbers)
