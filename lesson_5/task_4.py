@@ -1,8 +1,9 @@
 from random import randint
 from timeit import default_timer
+from typing import Callable
 
 
-def logging_func(func):
+def logging_func(func: Callable):
     def inner(*args, **kwargs):
         start_time = default_timer()
         res = func(*args, **kwargs)
