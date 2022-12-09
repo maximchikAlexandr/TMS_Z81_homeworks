@@ -8,7 +8,7 @@ with open("data.csv", "r", encoding="utf-8") as file:
     src_list = list(csv.reader(file))
 
 # получаем лист, где каждый элемент - лист со значениями для одной строки в экселе
-row_headers = [""] + [f"Person {indx}" for indx in range(len(src_list))]
+row_headers = [""] + [f"Person {indx}" for indx in range(1, len(src_list))]
 
 
 def filter_list_by_indx(source: list[list[str]], indx: int) -> list[str]:
