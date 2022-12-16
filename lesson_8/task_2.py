@@ -42,4 +42,4 @@ for attr in attributes + ("load",):
 car = Car("Lada", 5, "Granta", 120)
 car.move()
 for attr in attributes:
-    assert hasattr(truck, attr), f"Нет аттрибута {attr}"
+    assert hasattr(car, attr), f"Нет аттрибута {attr}"
