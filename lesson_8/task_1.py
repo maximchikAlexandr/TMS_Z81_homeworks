@@ -1,13 +1,12 @@
 class Auto:
-    '''Class auto'''
-    def __init__(
-            self, brand: str, age: int, mark: str, color: str = "black", weight: int = 1
-    ) -> None:
-        self.brand = brand
-        self.age = age
-        self.color = color
-        self.mark = mark
-        self.weight = weight
+    """Class auto"""
+
+    def __init__(self, brand, age, mark, color="black", weight=1) -> None:
+        self.brand: str = brand
+        self.age: int = age
+        self.color: str = color
+        self.mark: str = mark
+        self.weight: int = weight
 
     def move(self) -> None:
         print("move")

@@ -4,18 +4,11 @@ from task_1 import Auto, attributes
 
 
 class Truck(Auto):
-    '''class Truck'''
-    def __init__(
-        self,
-        brand: str,
-        age: int,
-        mark: str,
-        max_load: int,
-        color: str = "black",
-        weight: int = 1,
-    ) -> None:
+    """class Truck"""
+
+    def __init__(self, brand, age, mark, max_load, color="black", weight=1) -> None:
         super().__init__(brand, age, mark, color, weight)
-        self.max_load = max_load
+        self.max_load: int = max_load
 
     def move(self) -> None:
         print("attention")
@@ -28,16 +21,9 @@ class Truck(Auto):
 
 
 class Car(Auto):
-    '''class Car'''
-    def __init__(
-        self,
-        brand: str,
-        age: int,
-        mark: str,
-        max_speed: int,
-        color: str = "black",
-        weight: int = 1,
-    ) -> None:
+    """class Car"""
+
+    def __init__(self, brand, age, mark, max_speed, color="black", weight=1) -> None:
         super().__init__(brand, age, mark, color, weight)
         self.max_speed = max_speed
 
@@ -49,10 +35,8 @@ class Car(Auto):
 # check class Truck
 truck = Truck("Lada", 5, "Granta", 1)
 truck.move()
-
 for attr in attributes + ("load",):
     assert hasattr(truck, attr), f"Нет аттрибута {attr}"
-
 
 # check class Car
 car = Car("Lada", 5, "Granta", 120)
