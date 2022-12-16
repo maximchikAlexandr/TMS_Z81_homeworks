@@ -2,7 +2,6 @@ class Point:
     """class Point"""
 
 
-
 class Circle:
     """class Circle"""
 
