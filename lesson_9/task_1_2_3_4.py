@@ -1,8 +1,17 @@
+"""
+Описать Dataclass, который
+- содержит три произвольных поля, разных типов
+- имеет один-единственный classmethod, который проверяет типы этих трех полей и возвращает объект
+Dataclass'a
+- является НЕизменяемым (у объекта этого класса нельзя изменить значения атрибута/добавить
+новый атрибут после его создания)
+"""
+
 from dataclasses import dataclass
 from typing import Union
 
 
-@dataclass(frozen=True)
+@dataclass(frozen=False)
 class Human:
     """Human"""
 
@@ -26,10 +35,6 @@ class Human:
         print("Hello world!")
 
 
-human = Human.build("John", 66, 66.0)
-
-
-# human.hello_world()
 
 
 class TestMetaClass(type):
@@ -46,6 +51,6 @@ class TestClass(metaclass=TestMetaClass):
     def move(self):
         print("Moove")
 
-
-test_obj = TestClass()
-test_obj.hello()
+if __name__ == '__main__':
+    test_obj = TestClass()
+    test_obj.hello()
