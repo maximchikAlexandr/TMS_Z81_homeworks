@@ -4,7 +4,8 @@ from typing import Union
 
 @dataclass(frozen=True)
 class Human:
-    '''Human'''
+    """Human"""
+
     name: str
     age: int
     weight: Union[float, int]
@@ -26,20 +27,25 @@ class Human:
 
 
 human = Human.build("John", 66, 66.0)
+
+
 # human.hello_world()
 
 
 class TestMetaClass(type):
-    '''TestMetaClass'''
+    """TestMetaClass"""
+
     def __new__(cls, name, base, attrs):
-        attrs.update({'hello': staticmethod(Human.hello_world) })
+        attrs.update({"hello": staticmethod(Human.hello_world)})
         return super().__new__(cls, name, base, attrs)
 
 
 class TestClass(metaclass=TestMetaClass):
-    '''TestClass'''
+    """TestClass"""
+
     def move(self):
-        print('Moove')
+        print("Moove")
+
 
 test_obj = TestClass()
 test_obj.hello()
