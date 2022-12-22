@@ -48,8 +48,6 @@ class TestMetaClass(type):
 class TestClass(metaclass=TestMetaClass):
     """TestClass"""
 
-    def move(self):
-        print("Moove")
 
 if __name__ == '__main__':
     test_obj = TestClass()
