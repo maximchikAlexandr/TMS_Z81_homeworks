@@ -11,7 +11,7 @@ from dataclasses import dataclass
 from typing import Union
 
 
-@dataclass(frozen=False)
+@dataclass(frozen=True)
 class Human:
     """Human"""
 
