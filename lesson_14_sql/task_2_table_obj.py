@@ -14,12 +14,6 @@ class Customer:
                     VALUES (%s, %s, %s, %s)"""
         cursor.execute(query, (self.name, self.age, self.address, self.balance))
 
-    @staticmethod
-    def get_id_by_name(name, cursor) -> int:
-        query = """SELECT id FROM customers WHERE name = %s;"""
-        cursor.execute(query, (name,))
-        return cursor.fetchone()[0]
-
 
 @dataclass
 class Product:
@@ -32,22 +26,16 @@ class Product:
     category: str
 
     @classmethod
-    def get_product_by_id(cls, name, cursor):
+    def get_product_by_name(cls, name, cursor):
         query = """SELECT pr.name, pr.price, pr.count_to_stock,
                         pr.description, pr.discount, cat.name
                     FROM products AS pr
                     INNER JOIN category AS cat ON cat.id = pr.category_id
-                    WHERE pr.id = %s"""
-        product_id = cls.get_id_by_name(name, cursor)
-        cursor.execute(query, (product_id,))
+                    WHERE pr.name = %s"""
+        cursor.execute(query, (name,))
         product_fields = cursor.fetchone()
         return cls(*product_fields)
 
-    @staticmethod
-    def get_id_by_name(name, cursor) -> int:
-        query = """SELECT id FROM products WHERE name = %s;"""
-        cursor.execute(query, (name,))
-        return cursor.fetchone()[0]
 
 
 @dataclass
@@ -60,10 +48,12 @@ class Order:
     product_description: str
 
     @staticmethod
-    def add_new_order(product_count, customer_id, product_id, cursor):
-        query = """INSERT INTO orders (product_count, customer_id, product_id)
-                    VALUES (%s, %s, %s)"""
-        cursor.execute(query, (product_count, customer_id, product_id))
+    def add_new_order(product_count, customer_name, product_name, cursor):
+        query = """INSERT INTO orders(product_count, customer_id, product_id)
+                    VALUES (%s,
+                         (SELECT id FROM customers WHERE name = %s),
+                         (SELECT id FROM products WHERE name = %s))"""
+        cursor.execute(query, (product_count, customer_name, product_name))
 
     @classmethod
     def get_orders_by_cumstomer_name(cls, customer_name, cursor):
