@@ -21,7 +21,7 @@ def bultin_searching(lst, item):
     return lst.index(item)
 
 
-target_lst = sorted({randint(1, 10**6) for _ in range(1, 10**6, randint(1, 5))})
+target_lst = sorted({randint(1, 10**5) for _ in range(10**6)})
 target_item = choice(target_lst)
 
 print(f"Количество элементов в списке:\n{len(target_lst)}\nИскомое значение:\n{target_item}\n")
