@@ -1,0 +1,13 @@
+[MESSAGES CONTROL]
+disable=missing-module-docstring,
+        missing-function-docstring,
+        unnecessary-lambda-assignment,
+        import-error,
+        too-many-arguments,
+        too-few-public-methods,
+        no-member
+        
+
+[FORMAT]
+max-line-length=120
+
