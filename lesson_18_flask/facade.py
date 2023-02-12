@@ -41,13 +41,3 @@ class PostFacade:
         self.__connection.execute(query)
         self.__connection.commit()
 
-
-if __name__ == '__main__':
-    from db import EngineDB
-
-    e = EngineDB()
-    p = PostFacade(e)
-    res = p.get_all_posts()
-    print(res,
-          type(res),
-          sep="\n")
