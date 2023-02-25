@@ -32,27 +32,3 @@ class HoroscopeSource:
         for day, hrscp in self.__horoscopes["horo"][zodiac_name].items():
             horoscope[self.__horoscopes["horo"]["date"][f"@{day}"]] = hrscp
         return horoscope
-
-
-def main():
-    zodiac_signs = [
-        "aries",
-        "taurus",
-        "gemini",
-        "cancer",
-        "leo",
-        "virgo",
-        "libra",
-        "scorpio",
-        "sagittarius",
-        "capricorn",
-        "aquarius",
-        "pisces",
-    ]
-    horoscope_src = HoroscopeSource()
-    horoscope = horoscope_src.get_horoscope(zodiac_signs[2])
-    print(horoscope)
-
-
-if __name__ == "__main__":
-    main()
