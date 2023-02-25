@@ -1,9 +1,9 @@
-from django.shortcuts import render
-from django.http import HttpResponse
 from django.core.handlers.wsgi import WSGIRequest
+from django.http import HttpResponse
+from django.shortcuts import render
+from django.views.generic import TemplateView
 
 from horoscope_app.services import HoroscopeSource
-from django.views.generic import TemplateView
 
 # Create your views here.
 hor_src = HoroscopeSource()
