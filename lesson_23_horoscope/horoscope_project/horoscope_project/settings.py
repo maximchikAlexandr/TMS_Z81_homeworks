@@ -18,11 +18,14 @@ from dotenv import load_dotenv
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+if os.path.exists(f"{BASE_DIR}/.env"):
+    load_dotenv(f"{BASE_DIR}/.env")
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-q*v97$t^om)_bh&0f+i0a05_2s2=3-x8rbnbzfa=#=jpae@v9w"
+SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -75,9 +78,7 @@ WSGI_APPLICATION = "horoscope_project.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-if os.path.exists(f"{BASE_DIR}/.env"):
-    load_dotenv(f"{BASE_DIR}/.env")
-    
+
 DATABASES = {
     'default': {
         'ENGINE': os.environ.get("DB_ENGINE"),
