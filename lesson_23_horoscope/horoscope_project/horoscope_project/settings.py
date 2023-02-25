@@ -18,10 +18,6 @@ from dotenv import load_dotenv
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-DOTENV_PATH = os.path.join(BASE_DIR, '.env')
-if os.path.exists(DOTENV_PATH):
-    load_dotenv(DOTENV_PATH)
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
@@ -79,6 +75,9 @@ WSGI_APPLICATION = "horoscope_project.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+if os.path.exists(f"{BASE_DIR}/.env"):
+    load_dotenv(f"{BASE_DIR}/.env")
+    
 DATABASES = {
     'default': {
         'ENGINE': os.environ.get("DB_ENGINE"),
