@@ -10,6 +10,7 @@ hor_src = HoroscopeSource()
 
 
 class ZodiacView(TemplateView):
+    """Для главной страницы"""
     template_name = "horoscope_app/index.html"
 
     def get(self, request: WSGIRequest) -> HttpResponse:
@@ -18,6 +19,7 @@ class ZodiacView(TemplateView):
 
 
 class HoroscopeView(TemplateView):
+    """Для вывода гороскопа для определенного знака зодиака"""
     template_name = "horoscope_app/detail_horoscope.html"
 
     def get(self, request: WSGIRequest, zodiac_sign: str) -> HttpResponse:
