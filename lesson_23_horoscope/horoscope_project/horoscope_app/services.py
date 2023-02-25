@@ -3,6 +3,9 @@ from typing import Dict
 
 import requests
 import xmltodict
+from django.db.models.query import QuerySet
+
+from horoscope_app.models import Zodiac
 
 
 class HoroscopeSource:
@@ -11,12 +14,20 @@ class HoroscopeSource:
     def __init__(self) -> None:
         self.__get_horoscope_from_internet()
 
+    @staticmethod
+    def get_list_of_zodiac_signs() -> QuerySet:
+        return Zodiac.objects.all()
+
     def get_horoscope(self, zodiac_name: str) -> Dict[str, str]:
         """Проверяем актуальность гороскопов и возвращаем гороскоп
         по знаку зодиака"""
         if not self.__is_actual_horoscope():
             self.__get_horoscope_from_internet()
-        return self.__create_horoscope_dict(zodiac_name)
+        zodiac = Zodiac.objects.filter(latin_name=zodiac_name)[0]
+        return {
+            "russian_name": zodiac.russian_name,
+            "horoscope": self.__create_horoscope_dict(zodiac_name),
+        }
 
     def __is_actual_horoscope(self) -> bool:
         today = self.__horoscopes["horo"]["date"]["@today"]

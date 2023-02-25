@@ -1,0 +1,27 @@
+{% extends 'horoscope_app/base.html' %}
+{% block content %}
+
+<div class="container">
+    <h1 class="text-center">Гороскоп</h1>
+    <div class="row">
+        <div class="col-6">
+            <div class="list-group">
+
+                {% for zodiac in zodiac_signs %}
+                <a href="{% url 'horoscope' zodiac_sign=zodiac.latin_name %}"
+                   class="list-group-item list-group-item-action  bg-primary p-2 text-dark bg-opacity-25">
+                    {{ zodiac.russian_name }}</a>
+                {% endfor %}
+
+            </div>
+        </div>
+
+        <div class="col-6">
+            <img src="https://sun9-68.userapi.com/impg/FwSxTtmK0Js8OLHNkQtGMP9Tzw1tAu28DEpgoQ/GTLezMy5iAk.jpg?size=800x800&quality=96&sign=a8d5eb382da80a093ef48260d5771718&type=album"
+                 class="img-fluid">
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

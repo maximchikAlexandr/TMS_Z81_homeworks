@@ -1,0 +1,21 @@
+{% extends 'horoscope_app/base.html' %}
+{% block content %}
+
+
+<div class="container">
+    <h1 class="text-center"> {{ horoscope.russian_name }}</h1>
+    <table class="table table-primary table-striped">
+        <tbody>
+        {% for date, horoscope in horoscope.horoscope.items %}
+        <tr>
+            <td> {{ date }}</td>
+            <td> {{ horoscope }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+</div>
+
+
+{% endblock %}
