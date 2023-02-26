@@ -9,7 +9,7 @@ from horoscope_app.services import HoroscopeSource
 hor_src = HoroscopeSource()
 
 
-class ZodiacsSignsView(TemplateView):
+class ZodiacSignsView(TemplateView):
     """Для главной страницы"""
     template_name = "horoscope_app/index.html"
 
