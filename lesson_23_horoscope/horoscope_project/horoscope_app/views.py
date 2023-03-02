@@ -5,12 +5,11 @@ from django.views.generic import TemplateView
 
 from horoscope_app.services import HoroscopeSource
 
-# Create your views here.
 hor_src = HoroscopeSource()
 
 
 class ZodiacSignsView(TemplateView):
-    """Для главной страницы"""
+    """For main page"""
     template_name = "horoscope_app/index.html"
 
     def get(self, request: WSGIRequest) -> HttpResponse:
@@ -19,7 +18,7 @@ class ZodiacSignsView(TemplateView):
 
 
 class HoroscopeView(TemplateView):
-    """Для вывода гороскопа для определенного знака зодиака"""
+    """For horoscope of zodiac sign"""
     template_name = "horoscope_app/detail_horoscope.html"
 
     def get(self, request: WSGIRequest, zodiac_sign: str) -> HttpResponse:
