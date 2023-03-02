@@ -12,6 +12,7 @@ class HoroscopeSource:
     __HOROSCOPE_SOURCE_URL = "https://ignio.com/r/export/utf/xml/daily/com.xml"
 
     def __init__(self) -> None:
+        self.__horoscopes = None
         self.__get_horoscope_from_internet()
 
     @staticmethod
