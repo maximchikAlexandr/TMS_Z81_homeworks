@@ -1,0 +1,98 @@
+[
+  {
+    "model": "horoscope_app.zodiac",
+    "pk": 1,
+    "fields": {
+      "latin_name": "aries",
+      "russian_name": "Овен"
+    }
+  },
+  {
+    "model": "horoscope_app.zodiac",
+    "pk": 2,
+    "fields": {
+      "latin_name": "taurus",
+      "russian_name": "Телец"
+    }
+  },
+  {
+    "model": "horoscope_app.zodiac",
+    "pk": 3,
+    "fields": {
+      "latin_name": "gemini",
+      "russian_name": "Близнецы"
+    }
+  },
+  {
+    "model": "horoscope_app.zodiac",
+    "pk": 4,
+    "fields": {
+      "latin_name": "cancer",
+      "russian_name": "Рак"
+    }
+  },
+  {
+    "model": "horoscope_app.zodiac",
+    "pk": 5,
+    "fields": {
+      "latin_name": "leo",
+      "russian_name": "Лев"
+    }
+  },
+  {
+    "model": "horoscope_app.zodiac",
+    "pk": 6,
+    "fields": {
+      "latin_name": "virgo",
+      "russian_name": "Дева"
+    }
+  },
+  {
+    "model": "horoscope_app.zodiac",
+    "pk": 7,
+    "fields": {
+      "latin_name": "libra",
+      "russian_name": "Весы"
+    }
+  },
+  {
+    "model": "horoscope_app.zodiac",
+    "pk": 8,
+    "fields": {
+      "latin_name": "scorpio",
+      "russian_name": "Скорпион"
+    }
+  },
+  {
+    "model": "horoscope_app.zodiac",
+    "pk": 9,
+    "fields": {
+      "latin_name": "sagittarius",
+      "russian_name": "Стрелец"
+    }
+  },
+  {
+    "model": "horoscope_app.zodiac",
+    "pk": 10,
+    "fields": {
+      "latin_name": "capricorn",
+      "russian_name": "Козерог"
+    }
+  },
+  {
+    "model": "horoscope_app.zodiac",
+    "pk": 11,
+    "fields": {
+      "latin_name": "aquarius",
+      "russian_name": "Водолей"
+    }
+  },
+  {
+    "model": "horoscope_app.zodiac",
+    "pk": 12,
+    "fields": {
+      "latin_name": "pisces",
+      "russian_name": "Рыбы"
+    }
+  }
+]
