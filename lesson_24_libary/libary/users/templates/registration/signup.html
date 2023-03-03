@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+!--/templates/register.html-->
+{% block content %}
+<h2>REGISTER</h2>
+<form method="post">
+    {% csrf_token %}
+    <table>
+        {{form}}
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Register"></td>
+        </tr>
+    </table>
+
+</form>
+{% endblock %}

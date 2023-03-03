@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content  %}
+<h1> Author List </h1>
+
+{% if authors_list %}
+{% for author in authors_list %}
+<h3>
+    <a href="{{ author.get_absolute_url }}">{{author.pseudonym}}</a>
+</h3>
+{% endfor %}
+{% else %}
+<p>There are no authors in our libary</p>
+{% endif %}
+
+{% endblock %}
