@@ -7,11 +7,12 @@ from catalog.models import Author
 
 class Command(BaseCommand):
     help = "Create 10 random author"
+    __DEFAULT_COUNT_AUTHORS = 10
 
     def handle(self, *args, **options):
         seeder = Seed.seeder()
         fake = Faker()
-        count_authors = options.get("count") or 10
+        count_authors = options.get("count") or self.__DEFAULT_COUNT_AUTHORS
         seeder.add_entity(
             model=Author,
             number=count_authors,
